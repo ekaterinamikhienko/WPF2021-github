@@ -1,0 +1,11 @@
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\bin\Debug\FrontEnd.exe.config
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\bin\Debug\FrontEnd.exe
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\bin\Debug\FrontEnd.pdb
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\obj\Debug\FrontEnd.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\obj\Debug\FrontEnd.csproj.SuggestedBindingRedirects.cache
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\obj\Debug\FrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\obj\Debug\FrontEnd.exe
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\obj\Debug\FrontEnd.pdb
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\bin\Debug\wind.dll
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\bin\Debug\wind.pdb
+C:\Users\1\Desktop\Рабочий стол\2021.2022\Компьютерная графика\FrontEnd\obj\Debug\FrontEnd.csproj.CopyComplete
