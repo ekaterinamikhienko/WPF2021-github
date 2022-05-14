@@ -2,7 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections.Generic;
-using Wind;
+using System.Windows.Shapes;
+using System.Windows.Media;
 
 namespace FrontEnd
 {
@@ -33,15 +34,12 @@ namespace FrontEnd
                 Vy.Add(Vy[i] - dT * (g + k * Vy[i] / m));
                 i++;
             }
-            //for (int n = 0; n < T.Count; n++)
-            //{
-            //    Console.WriteLine("Время:{0,8:F2}; Координаты:({1,8:F2},{2,8:F2})\n", T[n], X[n], Y[n]);
-            //}
         }
     }
 
     class Enter : Window
     {
+        
         [STAThread]
         public static void Main()
         {
@@ -50,9 +48,9 @@ namespace FrontEnd
         }
         public Enter()
         {
+
             Title = "Полёт";
 
-           // SizeToContent = SizeToContent.WidthAndHeight;
             ResizeMode = ResizeMode.CanMinimize;
             StackPanel stackMain = new StackPanel();
             stackMain.Orientation = Orientation.Horizontal;
@@ -82,6 +80,14 @@ namespace FrontEnd
             txtbox2.Margin = new Thickness(5);
             stackChild2.Children.Add(txtbox2);
 
+            ScrollViewer sv = new ScrollViewer();
+            stackMain.Children.Add(sv);
+
+            Canvas canv = new Canvas();
+            canv.Width = 200;
+            canv.Height = 100;
+            stackMain.Children.Add(canv);
+
             Button btn = new Button();
             btn.Name = "Рассчитать";
             btn.Content = btn.Name;
@@ -92,17 +98,27 @@ namespace FrontEnd
 
             void ButtonOnClick(object sender, RoutedEventArgs args)
             {
-               // Button btn = args.Source as Button;
                 Flight b = new Flight(Convert.ToDouble(txtbox1.Text), Convert.ToDouble(txtbox2.Text));
-                Label lbl = new Label();
-                lbl.Content = b.X[0];
-                stackChild1.Children.Add(lbl);
 
-                Label lbl3 = new Label();
-                lbl3.Content = b.Y[0];
-                stackChild2.Children.Add(lbl3);
-
+                string enter = "X\tY\tT\n";
+                for (int n = 0; n < b.T.Count; n++)
+                {
+                    enter += b.X[n] + "\t" + b.Y[n] + "\t" + b.T[n] + "\n";
+                }
                 MessageBox.Show(b.X[b.X.Count - 1] + " " + b.Y[b.Y.Count - 1],"Тело упало");
+                sv.Content = enter;
+
+                Polyline poly = new Polyline();
+                canv.Children.Add(poly);
+                Point[] pts = new Point[b.T.Count]; 
+                for (int i = 0; i < b.T.Count; i++) 
+                {  
+                    pts[i].X = b.X[i]; 
+                    pts[i].Y = -b.Y[i]+100; 
+                }
+                poly.Points = new PointCollection(pts);
+                poly.Stroke = Brushes.Black;
+                poly.StrokeThickness = 4;
             }
         }
     }
